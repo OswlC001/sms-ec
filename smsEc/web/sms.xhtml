@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//ES" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <h:outputStylesheet library="css" name="estilo.css"/>
+                <title>LlamadasEc</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+            <h:form id="formSms">
+                <center>
+                    <br/>
+                    <p:panel header="Enviar SMS" style="width: 300px">
+                        <br/>
+                        <h:panelGrid columns="1">
+                            Numero:
+                            <p:inputText id="numero" value="#{smsBacking.numero}" style="text-align: right"/>                          
+                            <p:commandLink value="Limpiar Número" style="font-size: 10px; padding-left: 67%" action="#{smsBacking.limpiar()}" update="numero"/>                      
+                            Mensaje:
+                            <p:inputTextarea id="mensaje" value="#{smsBacking.mensaje}" cols="22" rows="10"/>
+                        </h:panelGrid>                         
+                        <br/>
+                        <p:commandButton id="botonEnviar" action="#{smsBacking.enviar()}" update="formSms"  value="Enviar" icon="ui-icon-mail-closed"/>
+                        <p:commandButton id="botonCancelar" action="#{smsBacking.cancelar()}" update="mensaje"  value="Cancelar" icon="ui-icon-close"/>
+                    </p:panel>                   
+                </center>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>
+
