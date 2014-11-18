@@ -1,0 +1,18 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/08/2014, 04:00:32 PM
+    Author     : Oswaldo Cruz
+*/
+
+.ui-icon-llamar {
+    background-image: url("#{resource['images/llamar.jpg']}") !important;
+}
+
+.ui-icon-colgar {
+    background-image: url("#{resource['images/colgar.jpg']}") !important;
+}
+
